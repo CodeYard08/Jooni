@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jooni
 
-## Getting Started
+Jooni는 이커머스 화면을 퍼블리싱 중심으로 정리하는 Next.js 프로젝트입니다.
+현재는 쇼핑 홈 화면 UI와 도메인 구조 스캐폴드를 우선 구성한 상태입니다.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- pnpm
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 `http://localhost:3000` 으로 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm dev
+pnpm build
+pnpm start
+pnpm lint
+```
 
-## Learn More
+## Current Scope
 
-To learn more about Next.js, take a look at the following resources:
+- 쇼핑 홈 화면 퍼블리싱
+- 상품 카드 / 상품 목록 레이아웃 UI
+- 스크롤 시 짧게 압축되는 상단 바 퍼블리싱
+- 이커머스 도메인 기준 `src` 구조 초안
+- 상품 / 장바구니 / 주문 / 위시리스트 기능 명세 문서 정리
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+app/                   Next App Router 엔트리
+docs/                  기능 명세 문서
+src/entities/          도메인 엔티티 타입
+src/features/          기능 단위 UI 및 구조
+src/widgets/           위젯 레이어
+src/shared/            공통 설정 및 유틸
+src/page-layer/        페이지 레이어 스캐폴드
+```
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 현재 작업 기준은 퍼블리싱 우선입니다.
+- 인터랙션 로직보다 정적 UI 목업과 구조 정리에 초점을 둡니다.
+- 일부 `src` 내부 파일은 이후 확장을 위한 스캐폴드 상태입니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Docs
+
+- `docs/features-product.md`
+- `docs/features-cart.md`
+- `docs/features-order.md`
+- `docs/features-wishlist.md`
