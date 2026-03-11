@@ -1,0 +1,1 @@
+// feature-specific wishlist types
